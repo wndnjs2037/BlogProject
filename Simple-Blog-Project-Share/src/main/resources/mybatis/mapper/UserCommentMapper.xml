@@ -9,7 +9,7 @@
     </select>
 
     <insert id = "saveComment">
-        UPDATE USER_COMMENT SET USER_NAME = #{comment.userName}, CONTENT = #{comment.content}
-        WHERE POST_ID = ${comment.postID};
+        INSERT INTO USER_COMMENT(POST_ID, USER_NAME, CONTENT)
+        VALUES (#{comment.postId}, #{comment.userName}, #{comment.content});
     </insert>
 </mapper>
