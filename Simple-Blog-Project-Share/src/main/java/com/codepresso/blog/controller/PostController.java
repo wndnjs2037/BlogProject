@@ -21,8 +21,8 @@ public class PostController {
         return list;
     }
 
-    @GetMapping(value = "/posts/{id}")
-    public List<Post> getDetail(@PathVariable("id") Integer id){
+    @GetMapping(value = "/post")
+    public List<Post> getDetail(@RequestParam(name = "id") Integer id){
         List<Post> list = postService.getPostDetail(id);
         return list;
     }
@@ -38,5 +38,9 @@ public class PostController {
         postService.modifyPost(post);
         return new Result(200, "Success");
     }
-
+    @DeleteMapping(value = "/post")
+    public Result deletePost(@RequestParam(name = "id") Integer id){
+        postService.deletePost(id);
+        return new Result(200, "Success");
+    }
 }

@@ -3,5 +3,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.codepresso.blog.repository.UserCommentRepository">
+    <select id="findComment" resultType="com.codepresso.blog.vo.UserComment">
+        SELECT *
+        FROM USER_COMMENT where post_id = ${post_id};
+    </select>
 
+    <insert id = "saveComment">
+        UPDATE USER_COMMENT SET USER_NAME = #{comment.userName}, CONTENT = #{comment.content}
+        WHERE POST_ID = ${comment.postID};
+    </insert>
 </mapper>

@@ -12,4 +12,5 @@ public interface PostRepository {
     List<Post> findIndex(@Param("id") Integer id);
     void save(@Param("post") Post post);
     boolean modify(@Param("post") Post post);
+    void deleteById(@Param("id") Integer id);
 }

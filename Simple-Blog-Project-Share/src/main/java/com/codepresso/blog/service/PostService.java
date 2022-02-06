@@ -10,12 +10,12 @@ import java.util.List;
 
 @Service
 public class PostService {
-    Date now = new Date();
     private PostRepository postRepository;
 
     public PostService(PostRepository postRepository){
         this.postRepository = postRepository;
     }
+
     public List<Post> getPostList(){
         return postRepository.findAll();
     }
@@ -25,15 +25,16 @@ public class PostService {
     }
 
     public void addPost(Post post){
-        post.setRegDate(now);
-        post.setUpdtDate(now);
         postRepository.save(post);
     }
 
     public boolean modifyPost(Post post){
-        post.setUpdtDate(now);
         postRepository.modify(post);
         return true;
+    }
+
+    public void deletePost(int id){
+        postRepository.deleteById(id);
     }
 
 }

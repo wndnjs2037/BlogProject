@@ -23,4 +23,8 @@
         WHERE ID = ${post.id};
     </update>
 
+    <delete id="deleteById">
+        DELETE FROM POST WHERE ID = ${id};
+    </delete>
+
 </mapper>
