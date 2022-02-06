@@ -20,7 +20,7 @@
 
     <update id="modify">
         UPDATE POST SET TITLE = #{post.title}, POST_CONTENT = #{post.postContent}
-        WHERE ID = ${id};
+        WHERE ID = ${post.id};
     </update>
 
 </mapper>
