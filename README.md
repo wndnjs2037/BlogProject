@@ -1,5 +1,5 @@
 # Blog_Project
-Codepresoo에서 진행하는 오프라인 첫 번째 프로젝트
+Codepresoo에서 진행하는 오프라인 첫 번째 프로젝트<br>
 팀원 : 김해림, 황주원
 <br>
 <br>
